@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun May 10 21:42:46 2020
-
 @author: serdarhelli
 """
 #### MODEL ###
