@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Jul  5 14:03:25 2020
-
 @author: serdarhelli
 """
 
@@ -26,7 +24,7 @@ kernel_sharpening = np.array([[-1,-1,-1],
 
 #path3 Path your original images
 path3="/Images/"
-## path2 Path Predicted Images which was applied CCA
+## path2 SAVE Path Predicted Images which was applied CCA
 path2="/SAVE_PATH/"
 ## path Path Predicted Images which has original size
 path="/Predicted_Images_PATH"
