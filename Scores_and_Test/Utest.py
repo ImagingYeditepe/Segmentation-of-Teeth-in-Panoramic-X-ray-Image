@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Dec 25 11:52:45 2020
-
 @author: serdarhelli
 """
 
