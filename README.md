@@ -11,7 +11,6 @@ DATASET ref - 	H. Abdi, S. Kasaei, and M. Mehdizadeh, “Automatic segmentation 
 
 [Source Code](https://github.com/SerdarHelli/Segmentation-of-Teeth-in-Panoramic-X-ray-Image-Using-U-Net)
 
-You have to create your masks.
 
 
 <img src="https://github.com/SerdarHelli/Semantic-Segmentation-of-Teeth-in-Panoramic-X-ray-Image/blob/master/Viewing_Estimations/Figures/example.png" alt="Results" width="1024" height="512">
