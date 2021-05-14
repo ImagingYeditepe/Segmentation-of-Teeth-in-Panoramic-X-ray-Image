@@ -38,7 +38,6 @@ def CCA_Analysis(orig_image,predict_image):
     thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
     
     labels=cv2.connectedComponents(thresh,connectivity=8)[1]       
-    plt.imshow(thresh)
     a=np.unique(labels)
     count2=0
     for label in a:
