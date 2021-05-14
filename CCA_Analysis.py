@@ -1,16 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri May 14 14:50:07 2021
-
 @author: serdarhelli
 """
 
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Jul  5 14:03:25 2020
 
-@author: serdarhelli
-"""
 
 import cv2
 import numpy as np
@@ -21,6 +14,8 @@ def midpoint(ptA, ptB):
 	return ((ptA[0] + ptB[0]) * 0.5, (ptA[1] + ptB[1]) * 0.5)
 # Load in image, convert to gray scale, and Otsu's threshold
 
+#Function accept cv2 type
+#Only useable splitted masks 
 
 def CCA_Analysis(orig_image,predict_image):
     kernel1 =( np.ones((5,5), dtype=np.float32))
