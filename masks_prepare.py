@@ -23,7 +23,7 @@ def convert_one_channel(img):
 def pre_masks(resize_shape=(512,512),path=default_path):
     ZipFile(path+"/Orig_Masks.zip").extractall(path+'/Masks/') 
     path=path+'/Masks/'
-    dirs=sorted(os.listdir(path))
+    dirs=sorted(os.listdir(path), reverse=True))
     masks=img=Image.open(path+dirs[0])
     masks=(masks.resize((resize_shape),Image.ANTIALIAS))
     masks=convert_one_channel(np.asarray(masks))
