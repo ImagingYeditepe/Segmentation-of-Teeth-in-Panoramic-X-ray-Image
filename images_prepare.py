@@ -22,7 +22,7 @@ def pre_images(resize_shape,path,include_zip):
     if include_zip==True:
         ZipFile(path+"/DentalPanoramicXrays.zip").extractall(path) 
         path=path+'/Images/'
-    dirs=sorted(os.listdir(path))
+    dirs=sorted(os.listdir(path), reverse=True)
     sizes=np.zeros([len(dirs),2])
     images=img=Image.open(path+dirs[0])
     sizes[0,:]=images.size
