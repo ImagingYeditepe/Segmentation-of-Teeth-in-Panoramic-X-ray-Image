@@ -1,4 +1,4 @@
-# Segmentation-of-Teeth-in-Panoramic-X-ray-Image
+# Semantic-Segmentation-of-Teeth-in-Panoramic-X-ray-Image
 The aim of this study is automatic semantic segmentation and measurement total length of teeth in one-shot panoramic x-ray image by using deep learning method with U-Net Model and binary image analysis in order to provide diagnostic information for the management of dental disorders, diseases, and conditions.
 
 The authors of this article are Selahattin Serdar Helli and Andaç Hamamcı  with the Department of Biomedical Engineering, Faculty of Engineering, Yeditepe University, Istanbul, Turkey.
@@ -9,7 +9,6 @@ DATASET ref - 	H. Abdi, S. Kasaei, and M. Mehdizadeh, “Automatic segmentation 
 
 [Link DATASET for only original images.](https://data.mendeley.com/datasets/hxt48yk462/1)
 
-[Source Code](https://github.com/SerdarHelli/Segmentation-of-Teeth-in-Panoramic-X-ray-Image-Using-U-Net)
 
 
 
@@ -18,4 +17,4 @@ This example of the model’s output has an effective segmentation map.
 <img src="https://github.com/SerdarHelli/Semantic-Segmentation-of-Teeth-in-Panoramic-X-ray-Image/blob/master/Viewing_Estimations/Figures/exampleofcca.png" alt="Results" width="1024" height="512">
 In this example of binary image processing, teeth have successfully labeled
 <img src="https://github.com/SerdarHelli/Semantic-Segmentation-of-Teeth-in-Panoramic-X-ray-Image/blob/master/Viewing_Estimations/Figures/Architecture.png" alt="Results" width="1024" height="512">
-Our neural network architecture. 
+Our neural network architecture.
