@@ -8,6 +8,7 @@ import os
 import numpy as np
 from PIL import Image
 from zipfile import ZipFile
+from natsort import natsorted
 
 
 def convert_one_channel(img):
@@ -22,7 +23,7 @@ def pre_images(resize_shape,path,include_zip):
     if include_zip==True:
         ZipFile(path+"/DentalPanoramicXrays.zip").extractall(path) 
         path=path+'/Images/'
-    dirs=sorted(os.listdir(path), reverse=False)
+    dirs=natsorted(os.listdir(path))
     sizes=np.zeros([len(dirs),2])
     images=img=Image.open(path+dirs[0])
     sizes[0,:]=images.size
@@ -37,5 +38,27 @@ def pre_images(resize_shape,path,include_zip):
     images=np.reshape(images,(len(dirs),resize_shape[0],resize_shape[1],1))
     return images,sizes
 
-##Example
-##images,sizes=pre_images((512,512),"/path",True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

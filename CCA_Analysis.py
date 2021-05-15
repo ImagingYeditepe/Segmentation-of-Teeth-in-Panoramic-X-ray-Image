@@ -9,7 +9,6 @@ import cv2
 import numpy as np
 from imutils import perspective
 from scipy.spatial import distance as dist
-import matplotlib.pyplot as plt
 def midpoint(ptA, ptB):
 	return ((ptA[0] + ptB[0]) * 0.5, (ptA[1] + ptB[1]) * 0.5)
 # Load in image, convert to gray scale, and Otsu's threshold
@@ -19,7 +18,6 @@ def midpoint(ptA, ptB):
 
 def CCA_Analysis(orig_image,predict_image):
     kernel1 =( np.ones((5,5), dtype=np.float32))
-    blur_radius=0.5
     kernel_sharpening = np.array([[-1,-1,-1], 
                                   [-1,9,-1], 
                                  [-1,-1,-1]])
@@ -28,9 +26,11 @@ def CCA_Analysis(orig_image,predict_image):
     image2 =orig_image
     image=cv2.morphologyEx(image, cv2.MORPH_OPEN, kernel1,iterations=3 )
     image = cv2.filter2D(image, -1, kernel_sharpening)
+    if len(image.shape)>2:
+        image=cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     image=cv2.erode(image,kernel1,iterations =3)
+    image=np.uint8((image*255))
     thresh = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
-    
     labels=cv2.connectedComponents(thresh,connectivity=8)[1]       
     a=np.unique(labels)
     count2=0
@@ -94,6 +94,3 @@ def CCA_Analysis(orig_image,predict_image):
 # image,count=CCA_Analysis(orig_image, predict_image)
 # plt.imshow(image)
 # print(count," Tooth Count")
-
-
-
