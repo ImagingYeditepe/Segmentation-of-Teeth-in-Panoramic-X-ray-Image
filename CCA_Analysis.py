@@ -28,8 +28,7 @@ def CCA_Analysis(orig_image,predict_image):
     image2 =orig_image
     image=cv2.morphologyEx(image, cv2.MORPH_OPEN, kernel1,iterations=3 )
     image = cv2.filter2D(image, -1, kernel_sharpening)
-    image=cv2.erode(image,kernel1,iterations =2)
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    image=cv2.erode(image,kernel1,iterations =3)
     thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
     
     labels=cv2.connectedComponents(thresh,connectivity=8)[1]       
