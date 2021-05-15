@@ -91,6 +91,6 @@ def CCA_Analysis(orig_image,predict_image,erode_iteration,open_iteration):
 # they have to original size
 # orig_image=cv2.imread("2.png")
 # predict_image=cv2.imread("2_mask.png")
-# image,count=CCA_Analysis(orig_image, predict_image)
+# image,count=CCA_Analysis(orig_image, predict_image,3,2)
 # plt.imshow(image)
 # print(count," Tooth Count")
