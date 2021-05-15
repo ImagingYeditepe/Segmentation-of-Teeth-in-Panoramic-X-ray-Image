@@ -43,7 +43,7 @@ default_path=script_dir+'/Custom_Masks/'
 def pre_splitted_masks(path=default_path):
     ZipFile(path+"/splitted_masks.zip").extractall(path+'/Masks/') 
     path=path+'/Masks/'
-    dirs=sorted(os.listdir(path),reverse=True)
+    dirs=sorted(os.listdir(path),reverse=False)
     masks=img=Image.open(path+dirs[0])
     masks=convert_one_channel(np.asarray(masks))
     for i in range (1,len(dirs)):
