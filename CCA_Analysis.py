@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-@author: serdarhelli
-"""
-
-
-
 import cv2
 import numpy as np
 from imutils import perspective
@@ -21,15 +14,12 @@ def CCA_Analysis(orig_image,predict_image,erode_iteration,open_iteration):
     kernel_sharpening = np.array([[-1,-1,-1], 
                                   [-1,9,-1], 
                                  [-1,-1,-1]])
-
     image = predict_image
-    image2 =orig_image
+    image2 =orig_image    
     image=cv2.morphologyEx(image, cv2.MORPH_OPEN, kernel1,iterations=open_iteration )
     image = cv2.filter2D(image, -1, kernel_sharpening)
-    if len(image.shape)>2:
-        image=cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     image=cv2.erode(image,kernel1,iterations =erode_iteration)
-    image=np.uint8((image*255))
+    image=cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     thresh = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
     labels=cv2.connectedComponents(thresh,connectivity=8)[1]       
     a=np.unique(labels)
@@ -41,7 +31,6 @@ def CCA_Analysis(orig_image,predict_image,erode_iteration,open_iteration):
         # Create a mask
         mask = np.zeros(thresh.shape, dtype="uint8")
         mask[labels == label] = 255
-
         # Find contours and determine contour area
         cnts,hieararch = cv2.findContours(mask.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         cnts = cnts[0]
@@ -87,10 +76,7 @@ def CCA_Analysis(orig_image,predict_image,erode_iteration,open_iteration):
     teeth_count=count2
     return image2,teeth_count
 
-# !!!!!EXAMPLE!!!!!
-# they have to original size
-# orig_image=cv2.imread("2.png")
-# predict_image=cv2.imread("2_mask.png")
-# image,count=CCA_Analysis(orig_image, predict_image,3,2)
-# plt.imshow(image)
-# print(count," Tooth Count")
+
+
+
+
